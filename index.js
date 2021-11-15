@@ -170,7 +170,7 @@ app.get("/allReview", async (req, res) => {
   });
 
 
-  // check admin or not
+  // check admin or not...................
   app.get("/checkAdmin/:email", async (req, res) => {
     const query = { email: req.params.email };
     const result = await usersCollection.find(query).toArray();
