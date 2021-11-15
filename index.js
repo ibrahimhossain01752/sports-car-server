@@ -12,7 +12,6 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
-const port = 5000;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -163,7 +162,7 @@ app.delete("/dashboard/manageServices/deleted/:id", async (req, res) =>{
   });
 
 
-//Show All Reviews in Ui..............
+//Show All Reviews in Ui..................
 app.get("/allReview", async (req, res) => {
     console.log(req.body);
     const result = await reviewCollection.find({}).toArray();
@@ -188,4 +187,4 @@ app.get("/allReview", async (req, res) => {
   
 });
 
-app.listen(process.env.PORT || port);
+app.listen(process.env.PORT || 5000);
